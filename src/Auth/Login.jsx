@@ -20,11 +20,12 @@ const navigation = useNavigate()
           password: password,
         })
       }).then((res) => {
-          console.log(res)
+          // console.log(res)
           return res.json();
         }).then((response) => {
           const token = response.token;
-          console.log('Token:', token)
+          localStorage.setItem('accessToken',token)
+          // console.log('Token:', token)
 
         //   console.log(response); 
         if(Object.keys(response).length === 0){
